@@ -48,6 +48,9 @@ export class ItemService {
   }
 
   delete(id: number) {
-    // A FAZER
+    const item = this.findOne(id);
+    this.listItems.splice(item.index, 1);
+
+    return item;
   }
 }
