@@ -22,7 +22,6 @@ export class ItemController {
 
   @Post()
   create(@Body() body: CreateItemDto) {
-    console.log(typeof body);
     return this.itemService.create(body);
   }
 
