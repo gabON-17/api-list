@@ -1,0 +1,15 @@
+[build]
+  # Comando para construir seu projeto Nest.js
+  command = "npm run build"
+  
+  # Pasta onde o build do Nest.js é gerado
+  publish = "dist"
+  
+  # Pasta onde a sua função serverless compilada estará
+  functions = "dist/src"
+
+[[redirects]]
+  # Redireciona todas as requisições para a nossa função serverless
+  from = "/*"
+  to = "/.netlify/functions/main.serverless" # O nome do arquivo .ts se torna o endpoint da função
+  status = 200 # Importante: status 200 para reescrita, não redirecionamento 301/302
